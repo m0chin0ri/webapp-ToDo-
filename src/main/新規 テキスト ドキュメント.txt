@@ -1,0 +1,69 @@
+-- メソッド: selectAllで使用
+SELECT id, todo, detail, created_at, updated_at FROM todos;
+
+-- メソッド: selectByIdで使用
+SELECT id, todo, detail, created_at, updated_at FROM todos WHERE id = 1;
+
+-- メソッド: insertで使用
+INSERT INTO todos (todo, detail, created_at, updated_at)
+VALUES
+('チケット購入', '東京ドーム (新日本)', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- メソッド: updateで使用
+UPDATE todos SET todo='ショッピング', detail='デパートで散財する',
+                                            updated_at=CURRENT_TIMESTAMP WHERE id = 1;
+
+-- メソッド: deleteで使用
+DELETE FROM todos WHERE id = 4;
+
+
+
+
+
+
+
+
+
+
+各SQL文の説明
+selectAll
+SQL
+SELECT id, todo, detail, created_at, updated_at FROM todos;
+
+
+todos テーブルから、全てのレコードの全てのカラム（id, todo, detail, created_at, updated_at）を選択するSQL文です。
+全ての「すること」を取得する際に使用されます。
+selectById
+SQL
+SELECT id, todo, detail, created_at, updated_at FROM todos WHERE id = 1;
+
+
+todos テーブルから、指定したID（この例では1）のレコードの全てのカラムを選択するSQL文です。
+特定のIDを持つ「すること」を取得する際に使用されます。
+insert
+SQL
+INSERT INTO todos (todo, detail, created_at, updated_at)
+VALUES
+('チケット購入', '東京ドーム (新日本)', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+
+todos テーブルに、新しいレコードを挿入するSQL文です。
+指定したカラム（todo, detail, created_at, updated_at）に、それぞれ値を設定します。
+CURRENT_TIMESTAMP は、現在のタイムスタンプを挿入します。
+新しい「すること」を登録する際に使用されます。
+update
+SQL
+UPDATE todos SET todo='ショッピング', detail='デパートで散財する',
+                                            updated_at=CURRENT_TIMESTAMP WHERE id = 1;
+
+
+todos テーブルの、指定したID（この例では1）のレコードを更新するSQL文です。
+SET句で更新するカラムと新しい値を指定します。
+指定したIDの「すること」を更新する際に使用されます。
+delete
+SQL
+DELETE FROM todos WHERE id = 4;
+
+
+todos テーブルから、指定したID（この例では4）のレコードを削除するSQL文です。
+指定したIDの「すること」を削除する際に使用されます。
